@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="civBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07192f"/>
+      <stop offset="100%" stop-color="#142c4b"/>
+    </linearGradient>
+    <linearGradient id="parchment" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="480" rx="16" fill="url(#civBg)"/>
+
+  <!-- Chrome Header -->
+  <rect x="0" y="0" width="800" height="42" rx="16" fill="#040d1a" />
+  <rect x="0" y="30" width="800" height="12" fill="#040d1a" />
+  <circle cx="28" cy="21" r="6" fill="#ff5f56" />
+  <circle cx="48" cy="21" r="6" fill="#ffbd2e" />
+  <circle cx="68" cy="21" r="6" fill="#27c93f" />
+  <text x="400" y="26" fill="#94a3b8" font-family="sans-serif" font-size="12" text-anchor="middle">peca-processual.pdf • Ação Revisional de Contrato Bancário & Reparação de Danos</text>
+
+  <!-- Document Sheet Mockup -->
+  <g transform="translate(60, 65)">
+    <rect x="0" y="0" width="680" height="375" rx="12" fill="url(#parchment)" stroke="#e2e8f0"/>
+    
+    <!-- Red margin line -->
+    <line x1="60" y1="0" x2="60" y2="375" stroke="#fca5a5" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+    <!-- Document Header -->
+    <g transform="translate(85, 40)">
+      <text x="0" y="0" fill="#0f172a" font-family="Georgia, serif" font-size="14" font-weight="bold">EXCELENTÍSSIMO SENHOR DOUTOR JUIZ DE DIREITO DA VARA CÍVEL</text>
+      <text x="0" y="20" fill="#475569" font-family="Georgia, serif" font-size="13">COMARCA DE VOLTA REDONDA — ESTADO DO RIO DE JANEIRO</text>
+
+      <line x1="0" y1="40" x2="540" y2="40" stroke="#cbd5e1" stroke-width="1"/>
+
+      <text x="0" y="65" fill="#0369a1" font-family="Georgia, serif" font-size="13" font-weight="bold">I. DOS FATOS E DOS FUNDAMENTOS JURÍDICOS (ART. 319, CPC)</text>
+      <text x="0" y="90" fill="#334155" font-family="Georgia, serif" font-size="12">
+        Trata-se de pretensão fundada na violação do princípio da boa-fé objetiva e na abusividade de cláusulas
+      </text>
+      <text x="0" y="110" fill="#334155" font-family="Georgia, serif" font-size="12">
+        contratuais à luz do Código de Defesa do Consumidor e do Código Civil Brasileiro...
+      </text>
+
+      <!-- Jurisprudence Quote Callout -->
+      <rect x="0" y="130" width="540" height="75" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
+      <line x1="0" y1="130" x2="0" y2="205" stroke="#0284c7" stroke-width="5"/>
+      <text x="20" y="152" fill="#0f172a" font-family="Georgia, serif" font-size="11" font-weight="bold">Precedente Vinculante — Superior Tribunal de Justiça (STJ):</text>
+      <text x="20" y="172" fill="#475569" font-family="Georgia, serif" font-size="11" font-style="italic">
+        "A revisão de cláusulas contratuais excessivamente onerosas é direito básico tutelado pelo ordenamento."
+      </text>
+      <text x="20" y="190" fill="#0284c7" font-family="sans-serif" font-size="10" font-weight="bold">(Súmula 297/STJ • Recurso Especial Repetitivo)</text>
+
+      <!-- Pedidos -->
+      <text x="0" y="235" fill="#0369a1" font-family="Georgia, serif" font-size="13" font-weight="bold">II. DOS PEDIDOS E REQUERIMENTOS FINAIS</text>
+      <text x="0" y="255" fill="#334155" font-family="Georgia, serif" font-size="12">a) A concessão da tutela de urgência antecipada com esteio no art. 300 do CPC;</text>
+      <text x="0" y="275" fill="#334155" font-family="Georgia, serif" font-size="12">b) A total procedência dos pedidos para a declaração de nulidade das cláusulas abusivas.</text>
+
+      <line x1="0" y1="295" x2="540" y2="295" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="0" y="315" fill="#64748b" font-family="sans-serif" font-size="10">Elaboração Acadêmica com Rastreabilidade Jurisprudencial • Mariana Souza de Castro</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,50 @@
+services:
+  # Gateway / Proxy Reverso Central (Porta 80)
+  proxy:
+    build:
+      context: ./proxy
+      dockerfile: Dockerfile
+    container_name: ugb-proxy
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - meu-portfolio
+      - cliente-1
+      - cliente-2
+    networks:
+      - portfolio-net
+
+  # Portfólio 1: João Pedro Yamaguti (Aluno Principal)
+  meu-portfolio:
+    build:
+      context: ./meu-portfolio
+      dockerfile: Dockerfile
+    container_name: portfolio-principal
+    restart: always
+    networks:
+      - portfolio-net
+
+  # Portfólio 2: Prof. Dr. Carlos Eduardo Silva (Cliente 1 / Docente)
+  cliente-1:
+    build:
+      context: ./clientes/cliente-1
+      dockerfile: Dockerfile
+    container_name: portfolio-cliente-1
+    restart: always
+    networks:
+      - portfolio-net
+
+  # Portfólio 3: Mariana Souza de Oliveira (Cliente 2 / Aluna)
+  cliente-2:
+    build:
+      context: ./clientes/cliente-2
+      dockerfile: Dockerfile
+    container_name: portfolio-cliente-2
+    restart: always
+    networks:
+      - portfolio-net
+
+networks:
+  portfolio-net:
+    driver: bridge

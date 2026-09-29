@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="webBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="reactGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="chartBar" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="480" rx="16" fill="url(#webBg)"/>
+
+  <!-- Browser Chrome -->
+  <rect x="0" y="0" width="800" height="42" rx="16" fill="#0b1120" />
+  <rect x="0" y="30" width="800" height="12" fill="#0b1120" />
+  <circle cx="28" cy="21" r="6" fill="#ff5f56" />
+  <circle cx="48" cy="21" r="6" fill="#ffbd2e" />
+  <circle cx="68" cy="21" r="6" fill="#27c93f" />
+
+  <!-- Address Bar -->
+  <rect x="120" y="9" width="560" height="24" rx="6" fill="#1e293b" />
+  <text x="400" y="25" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" text-anchor="middle">🔒 https://app.yamaguti.dev/dashboard • React 18 + Spring Boot 3</text>
+
+  <!-- Left Sidebar -->
+  <rect x="0" y="42" width="180" height="438" fill="#090d16" />
+  <text x="24" y="80" fill="#38bdf8" font-size="15" font-weight="bold" font-family="sans-serif">⚡ OmniTech SaaS</text>
+  
+  <!-- Sidebar links -->
+  <rect x="16" y="105" width="148" height="34" rx="6" fill="#1e293b" />
+  <text x="44" y="127" fill="#ffffff" font-size="12" font-family="sans-serif" font-weight="600">📊 Visão Geral</text>
+
+  <text x="44" y="168" fill="#64748b" font-size="12" font-family="sans-serif">👥 Clientes</text>
+  <text x="44" y="208" fill="#64748b" font-size="12" font-family="sans-serif">📦 Produtos</text>
+  <text x="44" y="248" fill="#64748b" font-size="12" font-family="sans-serif">💳 Finanças</text>
+  <text x="44" y="288" fill="#64748b" font-size="12" font-family="sans-serif">⚙️ Ajustes</text>
+
+  <!-- Main Content Area -->
+  <g transform="translate(205, 60)">
+    <!-- Header -->
+    <text x="0" y="20" fill="#ffffff" font-size="18" font-weight="bold" font-family="sans-serif">Dashboard Analítico & Vendas</text>
+    <text x="0" y="40" fill="#64748b" font-size="12" font-family="sans-serif">Status de métricas atualizadas em tempo real via WebSocket</text>
+
+    <!-- Stat cards -->
+    <rect x="0" y="60" width="170" height="75" rx="8" fill="#1e293b" stroke="rgba(255,255,255,0.08)"/>
+    <text x="16" y="84" fill="#94a3b8" font-size="11" font-family="sans-serif">Receita Mensal</text>
+    <text x="16" y="112" fill="#38bdf8" font-size="18" font-weight="bold" font-family="sans-serif">R$ 48.920</text>
+
+    <rect x="190" y="60" width="170" height="75" rx="8" fill="#1e293b" stroke="rgba(255,255,255,0.08)"/>
+    <text x="206" y="84" fill="#94a3b8" font-size="11" font-family="sans-serif">Usuários Ativos</text>
+    <text x="206" y="112" fill="#22c55e" font-size="18" font-weight="bold" font-family="sans-serif">+ 2.840</text>
+
+    <rect x="380" y="60" width="170" height="75" rx="8" fill="#1e293b" stroke="rgba(255,255,255,0.08)"/>
+    <text x="396" y="84" fill="#94a3b8" font-size="11" font-family="sans-serif">Tempo de Resposta</text>
+    <text x="396" y="112" fill="#f59e0b" font-size="18" font-weight="bold" font-family="sans-serif">42ms (API)</text>
+
+    <!-- Chart Panel -->
+    <rect x="0" y="155" width="550" height="235" rx="10" fill="#131c2e" stroke="rgba(255,255,255,0.08)"/>
+    <text x="20" y="185" fill="#f1f5f9" font-size="13" font-weight="bold" font-family="sans-serif">Evolução de Requisições & Vendas</text>
+
+    <!-- Bars visualization -->
+    <g transform="translate(30, 220)">
+      <!-- Bar 1 -->
+      <rect x="20" y="60" width="28" height="80" rx="4" fill="url(#chartBar)"/>
+      <text x="34" y="155" fill="#64748b" font-size="10" text-anchor="middle">Jan</text>
+      <!-- Bar 2 -->
+      <rect x="80" y="40" width="28" height="100" rx="4" fill="url(#chartBar)"/>
+      <text x="94" y="155" fill="#64748b" font-size="10" text-anchor="middle">Fev</text>
+      <!-- Bar 3 -->
+      <rect x="140" y="25" width="28" height="115" rx="4" fill="url(#chartBar)"/>
+      <text x="154" y="155" fill="#64748b" font-size="10" text-anchor="middle">Mar</text>
+      <!-- Bar 4 -->
+      <rect x="200" y="50" width="28" height="90" rx="4" fill="url(#chartBar)"/>
+      <text x="214" y="155" fill="#64748b" font-size="10" text-anchor="middle">Abr</text>
+      <!-- Bar 5 -->
+      <rect x="260" y="15" width="28" height="125" rx="4" fill="#00b4d8"/>
+      <text x="274" y="155" fill="#38bdf8" font-size="10" font-weight="bold" text-anchor="middle">Mai</text>
+      <!-- Bar 6 -->
+      <rect x="320" y="0" width="28" height="140" rx="4" fill="#38bdf8"/>
+      <text x="334" y="155" fill="#38bdf8" font-size="10" font-weight="bold" text-anchor="middle">Jun</text>
+    </g>
+
+    <!-- Tech tag pill inside graphic -->
+    <rect x="390" y="340" width="140" height="28" rx="14" fill="#0f172a" stroke="#0284c7"/>
+    <text x="460" y="358" fill="#38bdf8" font-size="11" font-weight="600" text-anchor="middle">React • Spring Boot</text>
+  </g>
+</svg>

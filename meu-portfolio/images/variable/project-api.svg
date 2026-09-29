@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="apiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#091420"/>
+      <stop offset="100%" stop-color="#14213d"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="480" rx="16" fill="url(#apiBg)"/>
+
+  <!-- Window Chrome -->
+  <rect x="0" y="0" width="800" height="42" rx="16" fill="#060c14" />
+  <rect x="0" y="30" width="800" height="12" fill="#060c14" />
+  <circle cx="28" cy="21" r="6" fill="#ff5f56" />
+  <circle cx="48" cy="21" r="6" fill="#ffbd2e" />
+  <circle cx="68" cy="21" r="6" fill="#27c93f" />
+  <text x="400" y="26" fill="#94a3b8" font-family="monospace" font-size="12" text-anchor="middle">api-service • Swagger OpenAPI 3.0 • Python / Flask</text>
+
+  <!-- Left: API Endpoints list -->
+  <g transform="translate(30, 60)">
+    <rect x="0" y="0" width="340" height="390" rx="10" fill="#0a101b" stroke="rgba(255,255,255,0.08)"/>
+    <text x="20" y="32" fill="#e2e8f0" font-size="14" font-weight="bold" font-family="sans-serif">Endpoints da API REST</text>
+
+    <!-- Route 1 -->
+    <rect x="15" y="55" width="310" height="48" rx="8" fill="#131e30" stroke="rgba(34,197,94,0.3)"/>
+    <rect x="25" y="67" width="50" height="24" rx="4" fill="#166534"/>
+    <text x="50" y="83" fill="#4ade80" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle">GET</text>
+    <text x="85" y="84" fill="#f8fafc" font-family="monospace" font-size="12">/api/v1/metrics</text>
+    <text x="290" y="84" fill="#22c55e" font-family="monospace" font-size="11">200 OK</text>
+
+    <!-- Route 2 -->
+    <rect x="15" y="115" width="310" height="48" rx="8" fill="#131e30" stroke="rgba(56,189,248,0.3)"/>
+    <rect x="25" y="127" width="50" height="24" rx="4" fill="#075985"/>
+    <text x="50" y="143" fill="#38bdf8" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle">POST</text>
+    <text x="85" y="144" fill="#f8fafc" font-family="monospace" font-size="12">/api/v1/auth/login</text>
+    <text x="290" y="144" fill="#38bdf8" font-family="monospace" font-size="11">JWT</text>
+
+    <!-- Route 3 -->
+    <rect x="15" y="175" width="310" height="48" rx="8" fill="#131e30" stroke="rgba(245,158,11,0.3)"/>
+    <rect x="25" y="187" width="50" height="24" rx="4" fill="#854d0e"/>
+    <text x="50" y="203" fill="#fcd34d" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle">PUT</text>
+    <text x="85" y="204" fill="#f8fafc" font-family="monospace" font-size="12">/api/v1/clients/sync</text>
+    <text x="290" y="204" fill="#f59e0b" font-family="monospace" font-size="11">Async</text>
+
+    <!-- Route 4 -->
+    <rect x="15" y="235" width="310" height="48" rx="8" fill="#131e30" stroke="rgba(168,85,247,0.3)"/>
+    <rect x="25" y="247" width="50" height="24" rx="4" fill="#581c87"/>
+    <text x="50" y="263" fill="#c084fc" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle">DEL</text>
+    <text x="85" y="264" fill="#f8fafc" font-family="monospace" font-size="12">/api/v1/cache/purge</text>
+    <text x="290" y="264" fill="#a855f7" font-family="monospace" font-size="11">Admin</text>
+
+    <!-- Perf stats -->
+    <rect x="15" y="300" width="310" height="70" rx="8" fill="#0f172a" stroke="rgba(255,255,255,0.06)"/>
+    <text x="30" y="325" fill="#94a3b8" font-size="11" font-family="sans-serif">Média de Latência</text>
+    <text x="30" y="352" fill="#22c55e" font-size="16" font-weight="bold" font-family="sans-serif">18ms (Cache Hit)</text>
+    <text x="180" y="325" fill="#94a3b8" font-size="11" font-family="sans-serif">Taxa de Sucesso</text>
+    <text x="180" y="352" fill="#38bdf8" font-size="16" font-weight="bold" font-family="sans-serif">99.98%</text>
+  </g>
+
+  <!-- Right: JSON Response Code Editor -->
+  <g transform="translate(390, 60)">
+    <rect x="0" y="0" width="380" height="390" rx="10" fill="#020617" stroke="rgba(0,180,216,0.25)"/>
+    <rect x="0" y="0" width="380" height="30" rx="10" fill="#0b1324"/>
+    <text x="16" y="20" fill="#94a3b8" font-family="monospace" font-size="11">Response 200 OK • application/json</text>
+
+    <text x="20" y="60" fill="#f8fafc" font-family="monospace" font-size="12">{</text>
+    <text x="40" y="85" fill="#38bdf8" font-family="monospace" font-size="12">"status"<text fill="#f8fafc">: </text><text fill="#22c55e">"success"</text><text fill="#f8fafc">,</text></text>
+    <text x="40" y="110" fill="#38bdf8" font-family="monospace" font-size="12">"service"<text fill="#f8fafc">: </text><text fill="#fde047">"microservice-auth"</text><text fill="#f8fafc">,</text></text>
+    <text x="40" y="135" fill="#38bdf8" font-family="monospace" font-size="12">"framework"<text fill="#f8fafc">: </text><text fill="#fde047">"Python / Flask"</text><text fill="#f8fafc">,</text></text>
+    <text x="40" y="160" fill="#38bdf8" font-family="monospace" font-size="12">"container"<text fill="#f8fafc">: </text><text fill="#f8fafc">{</text></text>
+    <text x="60" y="185" fill="#38bdf8" font-family="monospace" font-size="12">"image"<text fill="#f8fafc">: </text><text fill="#fde047">"yamaguti/flask-api:latest"</text><text fill="#f8fafc">,</text></text>
+    <text x="60" y="210" fill="#38bdf8" font-family="monospace" font-size="12">"runtime"<text fill="#f8fafc">: </text><text fill="#fde047">"Docker Alpine"</text><text fill="#f8fafc">,</text></text>
+    <text x="60" y="235" fill="#38bdf8" font-family="monospace" font-size="12">"isolated"<text fill="#f8fafc">: </text><text fill="#4ade80">true</text></text>
+    <text x="40" y="260" fill="#f8fafc" font-family="monospace" font-size="12">},</text>
+    <text x="40" y="285" fill="#38bdf8" font-family="monospace" font-size="12">"benchmark_ms"<text fill="#f8fafc">: </text><text fill="#f59e0b">14.2</text></text>
+    <text x="20" y="310" fill="#f8fafc" font-family="monospace" font-size="12">}</text>
+
+    <!-- Status badge -->
+    <rect x="20" y="340" width="340" height="34" rx="6" fill="#131e30" stroke="#22c55e" stroke-width="1"/>
+    <circle cx="38" cy="357" r="5" fill="#22c55e"/>
+    <text x="52" y="361" fill="#4ade80" font-family="sans-serif" font-size="11" font-weight="600">Microsserviço Operacional e Testado</text>
+  </g>
+</svg>

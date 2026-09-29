@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bookBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c2340"/>
+      <stop offset="100%" stop-color="#1e3a5f"/>
+    </linearGradient>
+    <linearGradient id="pageGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fdfbf7"/>
+      <stop offset="100%" stop-color="#f5efe6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="480" rx="16" fill="url(#bookBg)"/>
+
+  <!-- Chrome Header -->
+  <rect x="0" y="0" width="800" height="42" rx="16" fill="#07162c" />
+  <rect x="0" y="30" width="800" height="12" fill="#07162c" />
+  <circle cx="28" cy="21" r="6" fill="#ff5f56" />
+  <circle cx="48" cy="21" r="6" fill="#ffbd2e" />
+  <circle cx="68" cy="21" r="6" fill="#27c93f" />
+  <text x="400" y="26" fill="#94a3b8" font-family="sans-serif" font-size="12" text-anchor="middle">projeto-pedagogico • Coletânea de Crônicas Juvenis • Ensino Fundamental II</text>
+
+  <!-- Open Book Mockup -->
+  <g transform="translate(60, 65)">
+    <!-- Book Shadow & Outer Cover -->
+    <rect x="0" y="0" width="680" height="375" rx="12" fill="#061220" opacity="0.6"/>
+    <rect x="5" y="5" width="670" height="365" rx="10" fill="#2c3e50"/>
+
+    <!-- Left Page -->
+    <rect x="15" y="15" width="315" height="345" rx="6" fill="url(#pageGrad)"/>
+    <text x="35" y="50" fill="#1e293b" font-family="Georgia, serif" font-size="18" font-weight="bold">Crônicas do Cotidiano</text>
+    <text x="35" y="70" fill="#64748b" font-family="sans-serif" font-size="11">Edição Escolar Especial • Turmas de 8º e 9º Anos</text>
+    
+    <!-- Left text lines representing a book -->
+    <line x1="35" y1="95" x2="310" y2="95" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="35" y1="115" x2="310" y2="115" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="35" y1="135" x2="280" y2="135" stroke="#cbd5e1" stroke-width="2"/>
+    
+    <text x="35" y="170" fill="#0f172a" font-family="Georgia, serif" font-size="13" font-style="italic">"A escrita é a ponte entre o olhar curioso da juventude e a reflexão sobre o mundo ao redor..."</text>
+
+    <line x1="35" y1="210" x2="310" y2="210" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="35" y1="230" x2="310" y2="230" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="35" y1="250" x2="260" y2="250" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="35" y1="270" x2="310" y2="270" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="35" y1="290" x2="290" y2="290" stroke="#cbd5e1" stroke-width="2"/>
+
+    <text x="35" y="335" fill="#0369a1" font-family="sans-serif" font-size="10" font-weight="bold">Coord. Prof. Lucas Ferreira • 2025/2026</text>
+
+    <!-- Spine in the middle -->
+    <rect x="330" y="15" width="20" height="345" fill="#e2d9cc"/>
+    <line x1="340" y1="15" x2="340" y2="360" stroke="#c4b5a0" stroke-width="2"/>
+
+    <!-- Right Page: Metrics & Student Participation -->
+    <rect x="350" y="15" width="315" height="345" rx="6" fill="url(#pageGrad)"/>
+    <text x="375" y="50" fill="#1e293b" font-family="Georgia, serif" font-size="16" font-weight="bold">Resultados do Projeto</text>
+
+    <rect x="375" y="75" width="265" height="70" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="390" y="100" fill="#64748b" font-size="11" font-family="sans-serif">Alunos Participantes</text>
+    <text x="390" y="128" fill="#0284c7" font-size="22" font-weight="bold" font-family="sans-serif">120+ Estudantes</text>
+
+    <rect x="375" y="160" width="265" height="70" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="390" y="185" fill="#64748b" font-size="11" font-family="sans-serif">Produção Textual Coletiva</text>
+    <text x="390" y="213" fill="#10b981" font-size="22" font-weight="bold" font-family="sans-serif">48 Crônicas Publicadas</text>
+
+    <rect x="375" y="245" width="265" height="60" rx="8" fill="#f0fdf4" stroke="#86efac"/>
+    <text x="390" y="270" fill="#166534" font-size="11" font-weight="bold" font-family="sans-serif">✓ Evento Literário de Autógrafos</text>
+    <text x="390" y="288" fill="#15803d" font-size="10" font-family="sans-serif">Encontro com as famílias e comunidade escolar</text>
+  </g>
+</svg>
