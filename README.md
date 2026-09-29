@@ -106,3 +106,77 @@ Dentro da VM:
 cd ~/portfolio-ugb
 ./deploy.sh
 ```
+
+---
+
+## 💻 Como Rodar em Outra Máquina (Instalação e Execução)
+
+Para executar o ecossistema em outra máquina a partir do repositório GitHub, siga os passos abaixo:
+
+### 1. Pré-requisitos
+- **Git** instalado.
+- **Docker** e **Docker Compose** instalados e em execução:
+  - **Windows / macOS:** Docker Desktop aberto e rodando.
+  - **Linux:** Docker Engine e docker-compose plugin ativos (`sudo systemctl status docker`).
+- **Porta 80 livre** na máquina host (certifique-se de que serviços locais como Apache, IIS, Nginx nativo ou Skype não estejam ocupando a porta 80).
+
+### 2. Clonar ou Atualizar o Repositório
+Para clonar pela primeira vez:
+```bash
+git clone https://github.com/Yamaguti1201/trabalhoPortifolioUgb.git
+cd trabalhoPortifolioUgb
+```
+
+Ou se a pasta já existir e desejar apenas sincronizar as novidades:
+```bash
+git pull origin main
+```
+
+### 3. Permissões de Execução dos Scripts (Linux / macOS)
+No terminal, conceda permissão aos scripts de automação:
+```bash
+chmod +x deploy.sh metrics.sh
+```
+
+### 4. Subir os Contêineres
+Você pode inicializar a stack de duas maneiras:
+
+- **Opção A — Script Automatizado (Recomendado):**
+  Realiza o build, incrementa o contador oficial de deploys, registra logs e roda o *Health Check* automático das rotas:
+  ```bash
+  ./deploy.sh
+  ```
+
+- **Opção B — Diretamente com o Docker Compose:**
+  ```bash
+  docker compose up -d --build
+  ```
+
+### 5. Acesso Local no Navegador
+Com os contêineres iniciados (`ugb-proxy`, `portfolio-principal`, `portfolio-cliente-1`, `portfolio-cliente-2`), acesse:
+
+| Página | URL Local |
+| :--- | :--- |
+| **Hub da Agência (Landing Page)** | [http://localhost](http://localhost) |
+| **Portfólio João Pedro Yamaguti** | [http://localhost/yamaguti/](http://localhost/yamaguti/) |
+| **Portfólio Cliente 1 (Lucas Ferreira)** | [http://localhost/cliente-1/](http://localhost/cliente-1/) |
+| **Portfólio Cliente 2 (Mariana Souza)** | [http://localhost/cliente-2/](http://localhost/cliente-2/) |
+
+### 6. Comandos Úteis
+- **Verificar métricas de desempenho e status:**
+  ```bash
+  ./metrics.sh
+  ```
+- **Listar status dos containers:**
+  ```bash
+  docker compose ps
+  ```
+- **Acompanhar logs em tempo real:**
+  ```bash
+  docker compose logs -f
+  ```
+- **Parar os containers:**
+  ```bash
+  docker compose down
+  ```
+
