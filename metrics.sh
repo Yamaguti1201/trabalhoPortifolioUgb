@@ -67,9 +67,9 @@ test_latency() {
     echo -e "  • ${name}: ${GREEN}${time_total}${NC}"
 }
 
-test_latency "http://localhost/" "Hub da Agência (/)"
+test_latency "http://localhost/" "Portfólio Aluno (/)"
 test_latency "http://localhost/yamaguti/" "Portfólio Aluno (/yamaguti/)"
-test_latency "http://localhost/cliente-1/" "Portfólio Aluno - Letras (/cliente-1/)"
+test_latency "http://localhost/cliente-1/" "Portfólio Aluna - Arquitetura e Urbanismo (Letícia Martins)"
 test_latency "http://localhost/cliente-2/" "Portfólio Aluna - Direito (/cliente-2/)"
 
 echo -e "\n${CYAN}======================================================${NC}"

@@ -17,13 +17,13 @@ Ecossistema multi-container para hospedagem de portfólios institucionais de alu
                                            │ Rede Interna Docker (portfolio-net)
                    ┌───────────────────────┼───────────────────────┐
                    ▼                       ▼                       ▼
-       ┌───────────────────────┐ ┌───────────────────┐ ┌───────────────────────┐
-       │     meu-portfolio     │ │     cliente-1     │ │       cliente-2       │
-       │ (João Pedro Yamaguti) │ │ (Prof. Carlos S.) │ │   (Mariana Souza)     │
-       │     Nginx Alpine      │ │   Nginx Alpine    │ │     Nginx Alpine      │
-       │ Rota: /yamaguti/      │ │ Rota: /cliente-1/ │ │ Rota: /cliente-2/     │
-       │ Sub: joao-yamaguti.*  │ │ Sub: carlos-silva │ │ Sub: mariana-souza.*  │
-       └───────────────────────┘ └───────────────────┘ └───────────────────────┘
+       ┌───────────────────────┐ ┌──────────────────────────┐ ┌───────────────────────┐
+       │     meu-portfolio     │ │        cliente-1         │ │       cliente-2       │
+       │ (João Pedro Yamaguti) │ │   (Letícia Martins)      │ │   (Mariana Souza)     │
+       │     Nginx Alpine      │ │      Nginx Alpine        │ │     Nginx Alpine      │
+       │ Rota: /               │ │    Rota: /cliente-1/     │ │ Rota: /cliente-2/     │
+       │ Sub: joao-yamaguti.*  │ │ Sub: leticia-martins.*   │ │ Sub: mariana-souza.*  │
+       └───────────────────────┘ └──────────────────────────┘ └───────────────────────┘
 ```
 
 ---
@@ -34,9 +34,8 @@ O gateway Nginx suporta tanto o acesso por **subcaminho** quanto por **subdomín
 
 | Portfólio | Perfil UGB | Acesso por Subcaminho | Acesso por Subdomínio (Nome e Sobrenome) |
 | :--- | :--- | :--- | :--- |
-| **Hub da Agência** | Landing Page Central | `http://64.236.192.17/` | `http://64.236.192.17/` |
-| **João Pedro Yamaguti** | Aluno Principal | `http://64.236.192.17/yamaguti/` | `http://joao-yamaguti.64.236.192.17.nip.io` |
-| **Lucas Ferreira** | Aluno - Letras (Cliente 1) | `http://64.236.192.17/cliente-1/` | `http://carlos-silva.64.236.192.17.nip.io` |
+| **João Pedro Yamaguti** | Aluno Principal | `http://64.236.192.17/` | `http://joao-yamaguti.64.236.192.17.nip.io` |
+| **Letícia Fernandes Martins** | Aluna - Arquitetura & Urbanismo (Cliente 1) | `http://64.236.192.17/cliente-1/` | `http://leticia-martins.64.236.192.17.nip.io` |
 | **Mariana Souza** | Aluna - Direito (Cliente 2) | `http://64.236.192.17/cliente-2/` | `http://mariana-souza.64.236.192.17.nip.io` |
 
 ---
@@ -157,9 +156,8 @@ Com os contêineres iniciados (`ugb-proxy`, `portfolio-principal`, `portfolio-cl
 
 | Página | URL Local |
 | :--- | :--- |
-| **Hub da Agência (Landing Page)** | [http://localhost](http://localhost) |
-| **Portfólio João Pedro Yamaguti** | [http://localhost/yamaguti/](http://localhost/yamaguti/) |
-| **Portfólio Cliente 1 (Lucas Ferreira)** | [http://localhost/cliente-1/](http://localhost/cliente-1/) |
+| **Portfólio João Pedro Yamaguti** | [http://localhost](http://localhost) |
+| **Portfólio Cliente 1 (Letícia Martins)** | [http://localhost/cliente-1/](http://localhost/cliente-1/) |
 | **Portfólio Cliente 2 (Mariana Souza)** | [http://localhost/cliente-2/](http://localhost/cliente-2/) |
 
 ### 6. Comandos Úteis

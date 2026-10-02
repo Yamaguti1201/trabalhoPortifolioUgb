@@ -70,9 +70,9 @@ check_url() {
     fi
 }
 
-check_url "http://localhost/" "Hub da Agência"
+check_url "http://localhost/" "Portfólio Aluno (Yamaguti)"
 check_url "http://localhost/yamaguti/" "Portfólio Aluno (Yamaguti)"
-check_url "http://localhost/cliente-1/" "Portfólio Aluno - Letras (Lucas Ferreira)"
+check_url "http://localhost/cliente-1/" "Portfólio Aluna - Arquitetura e Urbanismo (Letícia Martins)"
 check_url "http://localhost/cliente-2/" "Portfólio Aluna - Direito (Mariana Souza)"
 
 echo -e "\n${GREEN}====================================================${NC}"
