@@ -70,7 +70,7 @@ test_latency() {
 test_latency "http://localhost/" "Portfólio Aluno (/)"
 test_latency "http://localhost/yamaguti/" "Portfólio Aluno (/yamaguti/)"
 test_latency "http://localhost/cliente-1/" "Portfólio Aluna - Arquitetura e Urbanismo (Letícia Martins)"
-test_latency "http://localhost/cliente-2/" "Portfólio Aluna - Direito (/cliente-2/)"
+test_latency "http://localhost/cliente-2/" "Portfólio Aluna - Pedagogia (Sara Marcelle)"
 
 echo -e "\n${CYAN}======================================================${NC}"
 echo -e "${CYAN}      FIM DO RELATÓRIO DE MÉTRICAS                    ${NC}"

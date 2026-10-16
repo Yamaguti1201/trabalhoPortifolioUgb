@@ -1,0 +1,11 @@
+.git
+.cursor
+.DS_Store
+**/.DS_Store
+README.md
+INCIDENTES.md
+RESUMO_DO_PROJETO.txt
+.gitignore
+deploys.txt
+deploys.log
+azure-upload.exclude
