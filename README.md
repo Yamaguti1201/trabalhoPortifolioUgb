@@ -19,10 +19,10 @@ Ecossistema multi-container para hospedagem de portfólios institucionais de alu
                    ▼                       ▼                       ▼
        ┌───────────────────────┐ ┌──────────────────────────┐ ┌───────────────────────┐
        │     meu-portfolio     │ │        cliente-1         │ │       cliente-2       │
-       │ (João Pedro Yamaguti) │ │   (Letícia Martins)      │ │   (Mariana Souza)     │
+       │ (João Pedro Yamaguti) │ │   (Letícia Martins)      │ │    (Sara Marcelle)    │
        │     Nginx Alpine      │ │      Nginx Alpine        │ │     Nginx Alpine      │
        │ Rota: /               │ │    Rota: /cliente-1/     │ │ Rota: /cliente-2/     │
-       │ Sub: joao-yamaguti.*  │ │ Sub: leticia-martins.*   │ │ Sub: mariana-souza.*  │
+       │ Sub: joao-yamaguti.*  │ │ Sub: leticia-martins.*   │ │ Sub: sara-marcelle.*  │
        └───────────────────────┘ └──────────────────────────┘ └───────────────────────┘
 ```
 
@@ -36,7 +36,7 @@ O gateway Nginx suporta tanto o acesso por **subcaminho** quanto por **subdomín
 | :--- | :--- | :--- | :--- |
 | **João Pedro Yamaguti** | Aluno Principal | `http://64.236.192.17/` | `http://joao-yamaguti.64.236.192.17.nip.io` |
 | **Letícia Fernandes Martins** | Aluna - Arquitetura & Urbanismo (Cliente 1) | `http://64.236.192.17/cliente-1/` | `http://leticia-martins.64.236.192.17.nip.io` |
-| **Mariana Souza** | Aluna - Direito (Cliente 2) | `http://64.236.192.17/cliente-2/` | `http://mariana-souza.64.236.192.17.nip.io` |
+| **Sara Marcelle Cerqueira Amorim** | Aluna - Pedagogia (Cliente 2) | `http://64.236.192.17/cliente-2/` | `http://sara-marcelle.64.236.192.17.nip.io` |
 
 ---
 
@@ -158,7 +158,7 @@ Com os contêineres iniciados (`ugb-proxy`, `portfolio-principal`, `portfolio-cl
 | :--- | :--- |
 | **Portfólio João Pedro Yamaguti** | [http://localhost](http://localhost) |
 | **Portfólio Cliente 1 (Letícia Martins)** | [http://localhost/cliente-1/](http://localhost/cliente-1/) |
-| **Portfólio Cliente 2 (Mariana Souza)** | [http://localhost/cliente-2/](http://localhost/cliente-2/) |
+| **Portfólio Cliente 2 (Sara Marcelle)** | [http://localhost/cliente-2/](http://localhost/cliente-2/) |
 
 ### 6. Comandos Úteis
 - **Verificar métricas de desempenho e status:**

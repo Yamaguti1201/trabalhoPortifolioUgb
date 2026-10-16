@@ -5,6 +5,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>João Pedro Yamaguti | Desenvolvedor Full Stack & Cloud</title>
+  <meta name="description" content="João Pedro Yamaguti, estudante de Engenharia de Software no UGB, com portfólio de projetos reais no GitHub." />
+  <meta property="og:title" content="João Pedro Yamaguti | Desenvolvedor Full Stack & Cloud" />
+  <meta property="og:description" content="João Pedro Yamaguti, estudante de Engenharia de Software no UGB, com portfólio de projetos reais no GitHub." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://64.236.192.17/images/variable/perfil1%20-%20Edited.jpg" />
+  <link rel="icon" href="images/fixed/logoShadow2018.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "João Pedro Yamaguti",
+    "jobTitle": "Desenvolvedor Full Stack",
+    "alumniOf": "Centro Universitário Geraldo Di Biase",
+    "sameAs": "https://github.com/Yamaguti1201"
+  }
+  </script>
 
   <!-- Google Fonts & Bootstrap -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -102,21 +119,15 @@
               <a href="#projetos" class="btn btn-main-action">
                 <i class="fa-solid fa-rocket"></i> Ver Projetos em Destaque
               </a>
-              <a href="https://github.com/Yamaguti1201" target="_blank" rel="noopener" class="btn btn-cv-download">
-                <i class="fa-solid fa-file-arrow-down"></i> Baixar Currículo (PDF)
+              <a href="#trajetoria" class="btn btn-cv-download">
+                <i class="fa-solid fa-timeline"></i> Ver trajetória
               </a>
             </div>
 
             <!-- Redes Sociais Rápidas -->
             <div class="d-flex gap-2 justify-content-center justify-content-md-start">
-              <a href="https://github.com/Yamaguti1201" target="_blank" rel="noopener" class="btn-social-icon" title="GitHub">
+              <a href="https://github.com/Yamaguti1201" target="_blank" rel="noopener" class="btn-social-icon" title="GitHub" aria-label="Perfil no GitHub">
                 <i class="fa-brands fa-github"></i>
-              </a>
-              <a href="https://github.com/Yamaguti1201" target="_blank" rel="noopener" class="btn-social-icon" title="LinkedIn">
-                <i class="fa-brands fa-linkedin-in"></i>
-              </a>
-              <a href="https://github.com/Yamaguti1201" target="_blank" rel="noopener" class="btn-social-icon" title="Enviar Email">
-                <i class="fa-solid fa-envelope"></i>
               </a>
             </div>
 
@@ -201,30 +212,28 @@
       <!-- Grid de Cards de Projetos -->
       <div class="row g-4">
 
-        <!-- Projeto 1: Cloud & DevOps Azure -->
+        <!-- Projeto 1: Plataforma de portfólios UGB -->
         <div class="col-lg-6 project-item" data-category="cloud">
           <div class="project-card">
             <div class="project-media-wrapper">
               <span class="project-category-tag"><i class="fa-solid fa-server me-1"></i> DevOps & Nuvem</span>
-              <img src="images/variable/project-cloud.svg" alt="Infraestrutura Azure e Docker" />
+              <img src="images/variable/project-cloud.svg" alt="Plataforma de portfólios UGB" />
             </div>
             <div class="project-content">
-              <h3 class="project-title">Infraestrutura Multi-Tenant na Azure VM</h3>
+              <h3 class="project-title">Plataforma de portfólios UGB</h3>
               <p class="project-desc">
-                Arquitetura de alta disponibilidade em Máquina Virtual Linux na Microsoft Azure, com proxy reverso Nginx, 
-                isolamento de redes de containers com Docker Compose e rotas automatizadas para múltiplos portfólios.
+                Docker, Nginx e Azure VM hospedando este portfólio e os de colegas.
               </p>
               <div class="tech-tags-list">
+                <span class="tech-tag"><i class="fa-brands fa-docker text-info me-1"></i> Docker</span>
+                <span class="tech-tag"><i class="fa-solid fa-network-wired text-success me-1"></i> Nginx</span>
                 <span class="tech-tag"><i class="fa-brands fa-microsoft text-primary me-1"></i> Azure VM</span>
-                <span class="tech-tag"><i class="fa-brands fa-docker text-info me-1"></i> Docker Compose</span>
-                <span class="tech-tag"><i class="fa-solid fa-network-wired text-success me-1"></i> Nginx Reverse Proxy</span>
-                <span class="tech-tag"><i class="fa-brands fa-linux me-1"></i> Ubuntu Server</span>
               </div>
               <div class="project-card-footer">
-                <a href="https://github.com/Yamaguti1201" target="_blank" rel="noopener" class="btn-project-primary">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Demonstração
+                <a href="#contato" class="btn-project-primary">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Este site
                 </a>
-                <a href="https://github.com/Yamaguti1201" target="_blank" rel="noopener" class="btn-project-code">
+                <a href="https://github.com/Yamaguti1201/trabalhoPortifolioUgb" target="_blank" rel="noopener" class="btn-project-code">
                   <i class="fa-brands fa-github"></i> Código Fonte
                 </a>
               </div>
@@ -232,61 +241,23 @@
           </div>
         </div>
 
-        <!-- Projeto 2: Full Stack Spring Boot + React -->
-        <div class="col-lg-6 project-item" data-category="fullstack">
-          <div class="project-card">
-            <div class="project-media-wrapper">
-              <span class="project-category-tag"><i class="fa-solid fa-laptop-code me-1"></i> Full Stack SaaS</span>
-              <img src="images/variable/project-webapp.svg" alt="Plataforma Web SaaS React e Spring Boot" />
-            </div>
-            <div class="project-content">
-              <h3 class="project-title">OmniTech • Painel de Gestão & Métricas</h3>
-              <p class="project-desc">
-                Aplicação full-stack corporativa com autenticação segura JWT, dashboard com dados em tempo real, 
-                gerenciamento de clientes e relatórios financeiros com alta fluidez visual e arquitetura desacoplada.
-              </p>
-              <div class="tech-tags-list">
-                <span class="tech-tag"><i class="fa-brands fa-react text-info me-1"></i> React 18</span>
-                <span class="tech-tag"><i class="fa-brands fa-java text-danger me-1"></i> Spring Boot 3</span>
-                <span class="tech-tag"><i class="fa-solid fa-database text-primary me-1"></i> PostgreSQL</span>
-                <span class="tech-tag"><i class="fa-solid fa-shield-halved text-warning me-1"></i> Spring Security</span>
-              </div>
-              <div class="project-card-footer">
-                <a href="https://github.com/Yamaguti1201" target="_blank" rel="noopener" class="btn-project-primary">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Demonstração
-                </a>
-                <a href="https://github.com/Yamaguti1201" target="_blank" rel="noopener" class="btn-project-code">
-                  <i class="fa-brands fa-github"></i> Código Fonte
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Projeto 3: API Python Flask Microservice -->
+        <!-- Projeto 2: Estacionamento mobile -->
         <div class="col-lg-6 project-item" data-category="backend">
           <div class="project-card">
             <div class="project-media-wrapper">
-              <span class="project-category-tag"><i class="fa-solid fa-bolt me-1"></i> Back-end & API</span>
-              <img src="images/variable/project-api.svg" alt="API REST em Python e Flask" />
+              <span class="project-category-tag"><i class="fa-solid fa-bolt me-1"></i> Back-end</span>
+              <img src="images/variable/project-api.svg" alt="Estacionamento mobile em Python" />
             </div>
             <div class="project-content">
-              <h3 class="project-title">Microsserviço RESTful de Alta Performance</h3>
+              <h3 class="project-title">Estacionamento mobile</h3>
               <p class="project-desc">
-                Serviço de autenticação e métricas construído com Flask e Docker. Inclui documentação interativa Swagger OpenAPI, 
-                rate-limiting, benchmarks com tempo de resposta inferior a 20ms e testes unitários automatizados.
+                Projeto desenvolvido em Python para gestão de estacionamento mobile.
               </p>
               <div class="tech-tags-list">
-                <span class="tech-tag"><i class="fa-brands fa-python text-warning me-1"></i> Python 3</span>
-                <span class="tech-tag"><i class="fa-solid fa-pepper-hot text-danger me-1"></i> Flask</span>
-                <span class="tech-tag"><i class="fa-brands fa-docker text-info me-1"></i> Container Docker</span>
-                <span class="tech-tag"><i class="fa-solid fa-book text-success me-1"></i> Swagger 3.0</span>
+                <span class="tech-tag"><i class="fa-brands fa-python text-warning me-1"></i> Python</span>
               </div>
               <div class="project-card-footer">
-                <a href="https://github.com/Yamaguti1201" target="_blank" rel="noopener" class="btn-project-primary">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Demonstração
-                </a>
-                <a href="https://github.com/Yamaguti1201" target="_blank" rel="noopener" class="btn-project-code">
+                <a href="https://github.com/Yamaguti1201/projeto_mobile_parking" target="_blank" rel="noopener" class="btn-project-code">
                   <i class="fa-brands fa-github"></i> Código Fonte
                 </a>
               </div>
@@ -294,30 +265,47 @@
           </div>
         </div>
 
-        <!-- Projeto 4: Portal Web & Otimização de Performance -->
+        <!-- Projeto 3: Trabalho Wellington -->
+        <div class="col-lg-6 project-item" data-category="backend">
+          <div class="project-card">
+            <div class="project-media-wrapper">
+              <span class="project-category-tag"><i class="fa-solid fa-code me-1"></i> Back-end</span>
+              <img src="images/variable/project-webapp.svg" alt="Trabalho Wellington em C#" />
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Trabalho Wellington</h3>
+              <p class="project-desc">
+                Projeto acadêmico desenvolvido em C#.
+              </p>
+              <div class="tech-tags-list">
+                <span class="tech-tag"><i class="fa-solid fa-code text-primary me-1"></i> C#</span>
+              </div>
+              <div class="project-card-footer">
+                <a href="https://github.com/Yamaguti1201/trabalho-wellington" target="_blank" rel="noopener" class="btn-project-code">
+                  <i class="fa-brands fa-github"></i> Código Fonte
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projeto 4: Site Yamaguti TKD -->
         <div class="col-lg-6 project-item" data-category="fullstack">
           <div class="project-card">
             <div class="project-media-wrapper">
-              <span class="project-category-tag"><i class="fa-solid fa-globe me-1"></i> Solução Web</span>
-              <img src="images/variable/project-cms.svg" alt="Portal Corporativo e CMS" />
+              <span class="project-category-tag"><i class="fa-solid fa-globe me-1"></i> Web</span>
+              <img src="images/variable/project-cms.svg" alt="Site Yamaguti TKD em HTML" />
             </div>
             <div class="project-content">
-              <h3 class="project-title">Portal Institucional & CMS Otimizado</h3>
+              <h3 class="project-title">Site Yamaguti TKD</h3>
               <p class="project-desc">
-                Desenvolvimento de portal corporativo com CMS moderno, integrações de APIs externas, 
-                estrutura focada em SEO técnico (PageSpeed 98/100) e arquitetura modular em PHP / Laravel.
+                HTML de um trabalho da faculdade.
               </p>
               <div class="tech-tags-list">
-                <span class="tech-tag"><i class="fa-brands fa-laravel text-danger me-1"></i> Laravel / PHP</span>
-                <span class="tech-tag"><i class="fa-brands fa-wordpress text-primary me-1"></i> WordPress Custom</span>
-                <span class="tech-tag"><i class="fa-solid fa-gauge-high text-success me-1"></i> PageSpeed 98</span>
-                <span class="tech-tag"><i class="fa-solid fa-database text-warning me-1"></i> MySQL / Redis</span>
+                <span class="tech-tag"><i class="fa-brands fa-html5 text-danger me-1"></i> HTML</span>
               </div>
               <div class="project-card-footer">
-                <a href="https://github.com/Yamaguti1201" target="_blank" rel="noopener" class="btn-project-primary">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Demonstração
-                </a>
-                <a href="https://github.com/Yamaguti1201" target="_blank" rel="noopener" class="btn-project-code">
+                <a href="https://github.com/Yamaguti1201/YamagutiTKD" target="_blank" rel="noopener" class="btn-project-code">
                   <i class="fa-brands fa-github"></i> Código Fonte
                 </a>
               </div>
@@ -507,8 +495,8 @@
               <p class="small text-white-50 mb-3">
                 Quer conferir todo o histórico com detalhes formais e certificações?
               </p>
-              <a href="https://github.com/Yamaguti1201" target="_blank" rel="noopener" class="btn btn-nav-primary w-100 py-3 text-center justify-content-center d-flex align-items-center gap-2">
-                <i class="fa-solid fa-file-pdf"></i> Baixar Currículo Completo (PDF)
+              <a href="#trajetoria" class="btn btn-nav-primary w-100 py-3 text-center justify-content-center d-flex align-items-center gap-2">
+                <i class="fa-solid fa-timeline"></i> Ver trajetória
               </a>
             </div>
           </div>
@@ -538,9 +526,6 @@
         <div class="d-flex flex-wrap gap-3 justify-content-center">
           <a href="https://github.com/Yamaguti1201" target="_blank" rel="noopener" class="btn btn-cta-contact">
             <i class="fa-brands fa-github fs-5"></i> Conectar no GitHub
-          </a>
-          <a href="https://github.com/Yamaguti1201" target="_blank" rel="noopener" class="btn btn-outline-light px-4 py-3 rounded-3 fw-bold d-inline-flex align-items-center gap-2">
-            <i class="fa-brands fa-linkedin fs-5"></i> Mensagem via LinkedIn
           </a>
         </div>
       </div>

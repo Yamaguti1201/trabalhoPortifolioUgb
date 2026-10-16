@@ -37,7 +37,7 @@ services:
     networks:
       - portfolio-net
 
-  # Portfólio 3: Mariana Souza de Oliveira (Cliente 2 / Aluna)
+  # Portfólio 3: Sara Marcelle Cerqueira Amorim (Cliente 2 / Pedagogia)
   cliente-2:
     build:
       context: ./clientes/cliente-2

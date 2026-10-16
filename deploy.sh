@@ -73,7 +73,7 @@ check_url() {
 check_url "http://localhost/" "Portfólio Aluno (Yamaguti)"
 check_url "http://localhost/yamaguti/" "Portfólio Aluno (Yamaguti)"
 check_url "http://localhost/cliente-1/" "Portfólio Aluna - Arquitetura e Urbanismo (Letícia Martins)"
-check_url "http://localhost/cliente-2/" "Portfólio Aluna - Direito (Mariana Souza)"
+check_url "http://localhost/cliente-2/" "Portfólio Aluna - Pedagogia (Sara Marcelle)"
 
 echo -e "\n${GREEN}====================================================${NC}"
 echo -e "${GREEN}  DEPLOY #${NEW_DEPLOY} CONCLUÍDO COM SUCESSO!            ${NC}"
