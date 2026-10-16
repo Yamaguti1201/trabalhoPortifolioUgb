@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
-
 :root {
   --primary-dark: #07162c;
   --primary-blue: #003b71;
@@ -25,6 +23,10 @@ body {
   color: var(--text-body);
   line-height: 1.65;
   overflow-x: hidden;
+}
+
+section[id] {
+  scroll-margin-top: 92px;
 }
 
 /* ==========================================================================
@@ -349,24 +351,35 @@ body {
   max-width: 640px;
 }
 
-/* Filter pills */
+/* Filter pills (shadcn/ui TabsList style) */
+#project-filters {
+  background: #f1f5f9;
+  padding: 5px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
 .filter-btn {
-  background: #ffffff;
-  border: 1.5px solid #e2e8f0;
-  color: var(--text-body);
-  font-size: 0.88rem;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  font-size: 0.86rem;
   font-weight: 600;
-  padding: 8px 18px;
-  border-radius: 25px;
+  padding: 7px 16px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.filter-btn:hover,
+.filter-btn:hover {
+  color: var(--primary-dark);
+}
+
 .filter-btn.active {
-  background: var(--primary-blue);
-  border-color: var(--primary-blue);
-  color: #ffffff;
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: var(--primary-blue);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
 }
 
 /* ==========================================================================

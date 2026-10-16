@@ -56,7 +56,7 @@
           <li class="nav-item"><a class="nav-link nav-link-custom" href="#trajetoria">Trajetória</a></li>
           <li class="nav-item"><a class="nav-link nav-link-custom" href="#sobre">Sobre</a></li>
           <li class="nav-item ms-lg-2">
-            <a class="btn btn-nav-primary" href="arquivosSaraMarcelePortifolio/curriculoSaraMarcelle.jpeg" target="_blank" rel="noopener">
+            <a class="btn btn-nav-primary" href="arquivosSaraMarcelePortifolio/curriculoSaraMarcelle.jpeg" data-bs-toggle="modal" data-bs-target="#modalCurriculoSara">
               <i class="fa-solid fa-file-image me-1"></i> Ver currículo
             </a>
           </li>
@@ -72,7 +72,7 @@
 
           <div class="col-lg-4 col-md-5 order-md-2">
             <div class="hero-img-box">
-              <img src="arquivosSaraMarcelePortifolio/perfilSaraMarcelle.jpeg" alt="Foto de Sara Marcelle Cerqueira Amorim" />
+              <img src="arquivosSaraMarcelePortifolio/perfilSaraMarcelle.jpeg" alt="Foto de Sara Marcelle Cerqueira Amorim" decoding="async" />
               <div class="hero-img-tag">
                 <i class="fa-solid fa-chalkboard-user text-info"></i>
                 <span class="fw-semibold">Pedagogia • UGB</span>
@@ -96,7 +96,7 @@
             </p>
 
             <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start align-items-center mb-4">
-              <a href="arquivosSaraMarcelePortifolio/curriculoSaraMarcelle.jpeg" target="_blank" rel="noopener" class="btn btn-main-action">
+              <a href="arquivosSaraMarcelePortifolio/curriculoSaraMarcelle.jpeg" data-bs-toggle="modal" data-bs-target="#modalCurriculoSara" class="btn btn-main-action">
                 <i class="fa-solid fa-file-image"></i> Ver currículo
               </a>
               <a href="https://drive.google.com/drive/folders/1sSvn7gdj1nS0VbSbNn2JrKdTbEfUUZJd" target="_blank" rel="noopener" class="btn btn-cv-download">
@@ -188,13 +188,13 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="arquivosSaraMarcelePortifolio/cronogramaEstudoAbril.jpeg" alt="Cronograma de estudos de abril, concurso de Volta Redonda" />
+              <img src="arquivosSaraMarcelePortifolio/cronogramaEstudoAbril.jpeg" alt="Cronograma de estudos de abril, concurso de Volta Redonda" decoding="async" />
             </div>
             <div class="carousel-item">
-              <img src="arquivosSaraMarcelePortifolio/cronogramaEstudoMaio.jpeg" alt="Cronograma de estudos de maio, concurso de Volta Redonda" />
+              <img src="arquivosSaraMarcelePortifolio/cronogramaEstudoMaio.jpeg" alt="Cronograma de estudos de maio, concurso de Volta Redonda" loading="lazy" decoding="async" />
             </div>
             <div class="carousel-item">
-              <img src="arquivosSaraMarcelePortifolio/cronogramaEstudoJunho.jpeg" alt="Cronograma de estudos de junho, concurso de Volta Redonda" />
+              <img src="arquivosSaraMarcelePortifolio/cronogramaEstudoJunho.jpeg" alt="Cronograma de estudos de junho, concurso de Volta Redonda" loading="lazy" decoding="async" />
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselComunidade" data-bs-slide="prev" aria-label="Cronograma anterior">
@@ -503,7 +503,63 @@
     </div>
   </footer>
 
+  <!-- Modal de Currículo (shadcn/ui Dialog style) -->
+  <div class="modal fade" id="modalCurriculoSara" tabindex="-1" aria-labelledby="modalCurriculoSaraLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg" style="background: #1e1b4b; border-radius: 16px; overflow: hidden;">
+        <div class="modal-header border-bottom border-secondary border-opacity-25 py-3 px-4">
+          <h5 class="modal-title text-white fs-6 fw-semibold" id="modalCurriculoSaraLabel">
+            <i class="fa-solid fa-file-image text-info me-2"></i>Currículo — Sara Marcelle Cerqueira Amorim
+          </h5>
+          <div class="d-flex align-items-center gap-2 ms-auto">
+            <a href="arquivosSaraMarcelePortifolio/curriculoSaraMarcelle.jpeg" target="_blank" rel="noopener" download="Curriculo-Sara-Marcelle.jpeg" class="btn btn-sm btn-nav-primary">
+              <i class="fa-solid fa-download me-1"></i> Baixar / Abrir Original
+            </a>
+            <button type="button" class="btn-close btn-close-white ms-2" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+        </div>
+        <div class="modal-body p-3 text-center" style="background: #0f172a;">
+          <img src="arquivosSaraMarcelePortifolio/curriculoSaraMarcelle.jpeg" alt="Currículo de Sara Marcelle Cerqueira Amorim" loading="lazy" decoding="async" style="max-height: 78vh; max-width: 100%; width: auto; border-radius: 8px;" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Lightbox (shadcn/ui Dialog style) para ampliar cronogramas -->
+  <div class="modal fade" id="lightboxModal" tabindex="-1" aria-labelledby="lightboxModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg" style="background: #1e1b4b; border-radius: 16px; overflow: hidden;">
+        <div class="modal-header border-bottom border-secondary border-opacity-25 py-3 px-4">
+          <h5 class="modal-title text-white fs-6 fw-semibold" id="lightboxModalLabel">Visualização</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body p-0 text-center" style="background: #040d1a;">
+          <img id="lightboxModalImg" src="" alt="" style="max-height: 80vh; max-width: 100%; width: auto; object-fit: contain;" />
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const modalEl = document.getElementById('lightboxModal');
+      const modalImg = document.getElementById('lightboxModalImg');
+      const modalTitle = document.getElementById('lightboxModalLabel');
+      if (modalEl && window.bootstrap) {
+        const bsModal = new bootstrap.Modal(modalEl);
+        document.querySelectorAll('.carousel-recent .carousel-item img').forEach(function (img) {
+          img.style.cursor = 'zoom-in';
+          img.addEventListener('click', function () {
+            modalImg.src = this.src;
+            modalImg.alt = this.alt;
+            modalTitle.textContent = this.alt || 'Visualização';
+            bsModal.show();
+          });
+        });
+      }
+    });
+  </script>
 </body>
 
 </html>

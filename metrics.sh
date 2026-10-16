@@ -5,6 +5,7 @@ GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 YELLOW='\033[1;33m'
 CYAN='\033[0;36m'
+RED='\033[0;31m'
 NC='\033[0m'
 
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -71,6 +72,18 @@ test_latency "http://localhost/" "Portfólio Aluno (/)"
 test_latency "http://localhost/yamaguti/" "Portfólio Aluno (/yamaguti/)"
 test_latency "http://localhost/cliente-1/" "Portfólio Aluna - Arquitetura e Urbanismo (Letícia Martins)"
 test_latency "http://localhost/cliente-2/" "Portfólio Aluna - Pedagogia (Sara Marcelle)"
+
+test_subdomain_latency() {
+    local host=$1
+    local name=$2
+    local time_total
+    time_total=$(curl -s -o /dev/null -w "%{time_total}s" -H "Host: $host" "http://localhost/" || echo "Falha")
+    echo -e "  • Subdomínio ${name} (${host}): ${GREEN}${time_total}${NC}"
+}
+
+test_subdomain_latency "joao-yamaguti.localhost" "Yamaguti"
+test_subdomain_latency "leticia-martins.localhost" "Letícia Martins"
+test_subdomain_latency "sara-marcelle.localhost" "Sara Marcelle"
 
 echo -e "\n${CYAN}======================================================${NC}"
 echo -e "${CYAN}      FIM DO RELATÓRIO DE MÉTRICAS                    ${NC}"

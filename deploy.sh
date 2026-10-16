@@ -75,6 +75,23 @@ check_url "http://localhost/yamaguti/" "Portfólio Aluno (Yamaguti)"
 check_url "http://localhost/cliente-1/" "Portfólio Aluna - Arquitetura e Urbanismo (Letícia Martins)"
 check_url "http://localhost/cliente-2/" "Portfólio Aluna - Pedagogia (Sara Marcelle)"
 
+check_subdomain() {
+    local host=$1
+    local name=$2
+    local status
+    status=$(curl -s -o /dev/null -w "%{http_code}" -H "Host: $host" "http://localhost/" || echo "FALHA")
+
+    if [ "$status" = "200" ]; then
+        echo -e "  [✔] Subdomínio ${name} (${host}): ${GREEN}ONLINE (HTTP $status)${NC}"
+    else
+        echo -e "  [✖] Subdomínio ${name} (${host}): ${RED}ERRO (HTTP $status)${NC}"
+    fi
+}
+
+check_subdomain "joao-yamaguti.localhost" "João Pedro Yamaguti"
+check_subdomain "leticia-martins.localhost" "Letícia Martins"
+check_subdomain "sara-marcelle.localhost" "Sara Marcelle"
+
 echo -e "\n${GREEN}====================================================${NC}"
 echo -e "${GREEN}  DEPLOY #${NEW_DEPLOY} CONCLUÍDO COM SUCESSO!            ${NC}"
 echo -e "${GREEN}====================================================${NC}"

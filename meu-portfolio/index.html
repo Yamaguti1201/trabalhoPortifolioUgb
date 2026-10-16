@@ -9,7 +9,7 @@
   <meta property="og:title" content="João Pedro Yamaguti | Desenvolvedor Full Stack & Cloud" />
   <meta property="og:description" content="João Pedro Yamaguti, estudante de Engenharia de Software no UGB, com portfólio de projetos reais no GitHub." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="http://64.236.192.17/images/variable/perfil1%20-%20Edited.jpg" />
+  <meta property="og:image" content="http://64.236.192.17/images/variable/perfil-yamaguti.jpg" />
   <link rel="icon" href="images/fixed/logoShadow2018.png" />
 
   <script type="application/ld+json">
@@ -89,7 +89,7 @@
           <!-- Foto de Perfil / Visual -->
           <div class="col-lg-4 col-md-5 order-md-2">
             <div class="hero-img-box">
-              <img src="images/variable/perfil1 - Edited.jpg" alt="Foto de João Pedro Yamaguti" />
+              <img src="images/variable/perfil-yamaguti.jpg" alt="Foto de João Pedro Yamaguti" decoding="async" />
               <div class="hero-img-tag">
                 <i class="fa-solid fa-code text-info"></i>
                 <span class="fw-semibold">Engenharia de Software • UGB</span>
@@ -201,11 +201,11 @@
         </div>
 
         <!-- Filtros Rápidos (Interativos via JS) -->
-        <div class="d-flex flex-wrap gap-2" id="project-filters">
-          <button class="filter-btn active" data-filter="all">Todos</button>
-          <button class="filter-btn" data-filter="cloud">DevOps & Cloud</button>
-          <button class="filter-btn" data-filter="fullstack">Full Stack</button>
-          <button class="filter-btn" data-filter="backend">Back-end & APIs</button>
+        <div class="d-flex flex-wrap gap-2" id="project-filters" role="tablist" aria-label="Filtrar projetos por categoria">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Todos</button>
+          <button class="filter-btn" data-filter="cloud" role="tab" aria-selected="false">DevOps & Cloud</button>
+          <button class="filter-btn" data-filter="fullstack" role="tab" aria-selected="false">Full Stack</button>
+          <button class="filter-btn" data-filter="backend" role="tab" aria-selected="false">Back-end & APIs</button>
         </div>
       </div>
 
@@ -217,12 +217,12 @@
           <div class="project-card">
             <div class="project-media-wrapper">
               <span class="project-category-tag"><i class="fa-solid fa-server me-1"></i> DevOps & Nuvem</span>
-              <img src="images/variable/project-cloud.svg" alt="Plataforma de portfólios UGB" />
+              <img src="images/variable/project-cloud.svg" alt="Plataforma de portfólios UGB" loading="lazy" decoding="async" />
             </div>
             <div class="project-content">
               <h3 class="project-title">Plataforma de portfólios UGB</h3>
               <p class="project-desc">
-                Docker, Nginx e Azure VM hospedando este portfólio e os de colegas.
+                Arquitetura multi-container com Docker, Proxy Reverso Nginx e Azure VM com deploy e métricas automatizados em Bash.
               </p>
               <div class="tech-tags-list">
                 <span class="tech-tag"><i class="fa-brands fa-docker text-info me-1"></i> Docker</span>
@@ -230,9 +230,9 @@
                 <span class="tech-tag"><i class="fa-brands fa-microsoft text-primary me-1"></i> Azure VM</span>
               </div>
               <div class="project-card-footer">
-                <a href="#contato" class="btn-project-primary">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Este site
-                </a>
+                <button type="button" class="btn-project-primary border-0" data-bs-toggle="modal" data-bs-target="#modalArquiteturaUGB">
+                  <i class="fa-solid fa-diagram-project"></i> Ver Arquitetura
+                </button>
                 <a href="https://github.com/Yamaguti1201/trabalhoPortifolioUgb" target="_blank" rel="noopener" class="btn-project-code">
                   <i class="fa-brands fa-github"></i> Código Fonte
                 </a>
@@ -246,7 +246,7 @@
           <div class="project-card">
             <div class="project-media-wrapper">
               <span class="project-category-tag"><i class="fa-solid fa-bolt me-1"></i> Back-end</span>
-              <img src="images/variable/project-api.svg" alt="Estacionamento mobile em Python" />
+              <img src="images/variable/project-api.svg" alt="Estacionamento mobile em Python" loading="lazy" decoding="async" />
             </div>
             <div class="project-content">
               <h3 class="project-title">Estacionamento mobile</h3>
@@ -270,7 +270,7 @@
           <div class="project-card">
             <div class="project-media-wrapper">
               <span class="project-category-tag"><i class="fa-solid fa-code me-1"></i> Back-end</span>
-              <img src="images/variable/project-webapp.svg" alt="Trabalho Wellington em C#" />
+              <img src="images/variable/project-webapp.svg" alt="Trabalho Wellington em C#" loading="lazy" decoding="async" />
             </div>
             <div class="project-content">
               <h3 class="project-title">Trabalho Wellington</h3>
@@ -294,7 +294,7 @@
           <div class="project-card">
             <div class="project-media-wrapper">
               <span class="project-category-tag"><i class="fa-solid fa-globe me-1"></i> Web</span>
-              <img src="images/variable/project-cms.svg" alt="Site Yamaguti TKD em HTML" />
+              <img src="images/variable/project-cms.svg" alt="Site Yamaguti TKD em HTML" loading="lazy" decoding="async" />
             </div>
             <div class="project-content">
               <h3 class="project-title">Site Yamaguti TKD</h3>
@@ -493,10 +493,10 @@
 
             <div class="pt-3 border-top border-secondary">
               <p class="small text-white-50 mb-3">
-                Quer conferir todo o histórico com detalhes formais e certificações?
+                Quer conversar sobre oportunidades, estágio ou projetos em conjunto?
               </p>
-              <a href="#trajetoria" class="btn btn-nav-primary w-100 py-3 text-center justify-content-center d-flex align-items-center gap-2">
-                <i class="fa-solid fa-timeline"></i> Ver trajetória
+              <a href="#contato" class="btn btn-nav-primary w-100 py-3 text-center justify-content-center d-flex align-items-center gap-2">
+                <i class="fa-solid fa-paper-plane"></i> Entrar em contato
               </a>
             </div>
           </div>
@@ -554,6 +554,57 @@
     </div>
   </footer>
 
+  <!-- Modal de Arquitetura DevOps (shadcn/ui Dialog style) -->
+  <div class="modal fade" id="modalArquiteturaUGB" tabindex="-1" aria-labelledby="modalArquiteturaUGBLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg" style="border-radius: 16px; overflow: hidden;">
+        <div class="modal-header text-white border-0 py-3 px-4" style="background: #07162c;">
+          <h5 class="modal-title fs-6 fw-bold d-flex align-items-center gap-2" id="modalArquiteturaUGBLabel">
+            <i class="fa-solid fa-server text-info"></i> Especificações da Arquitetura Cloud &amp; DevOps
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body p-4">
+          <p class="text-secondary small mb-3">
+            Infraestrutura desenhada para alta disponibilidade, isolamento de processos e deploy automatizado na nuvem Microsoft Azure:
+          </p>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="p-3 rounded-3 border bg-light h-100">
+                <strong class="d-block text-dark mb-1"><i class="fa-solid fa-network-wired text-primary me-1"></i> Gateway Proxy Reverso</strong>
+                <span class="small text-secondary">Nginx Alpine na porta 80 com compressão Gzip ativa, headers de segurança e roteamento por subdomínio (nip.io) e subcaminho.</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3 rounded-3 border bg-light h-100">
+                <strong class="d-block text-dark mb-1"><i class="fa-brands fa-docker text-info me-1"></i> Isolamento em Containers</strong>
+                <span class="small text-secondary">Serviços independentes em rede bridge interna (<code>portfolio-net</code>) com política <code>restart: always</code> e healthchecks nativos.</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3 rounded-3 border bg-light h-100">
+                <strong class="d-block text-dark mb-1"><i class="fa-solid fa-terminal text-success me-1"></i> Deploy Automatizado (CI/CD)</strong>
+                <span class="small text-secondary">Script <code>deploy.sh</code> com versionamento de deploys, build automatizado e verificação HTTP em todas as rotas.</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3 rounded-3 border bg-light h-100">
+                <strong class="d-block text-dark mb-1"><i class="fa-solid fa-chart-line text-warning me-1"></i> Observabilidade &amp; Métricas</strong>
+                <span class="small text-secondary">Monitoramento em tempo real via <code>metrics.sh</code> medindo uso de CPU, memória, I/O de rede e latência HTTP.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-top bg-light py-2 px-4">
+          <a href="https://github.com/Yamaguti1201/trabalhoPortifolioUgb" target="_blank" rel="noopener" class="btn btn-sm btn-dark rounded-3">
+            <i class="fa-brands fa-github me-1"></i> Ver Repositório no GitHub
+          </a>
+          <button type="button" class="btn btn-sm btn-outline-secondary rounded-3" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
@@ -564,9 +615,13 @@
 
       filterBtns.forEach(btn => {
         btn.addEventListener('click', function () {
-          // Atualiza botão ativo
-          filterBtns.forEach(b => b.classList.remove('active'));
+          // Atualiza botão ativo e atributos ARIA
+          filterBtns.forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
           this.classList.add('active');
+          this.setAttribute('aria-selected', 'true');
 
           const filterValue = this.getAttribute('data-filter');
 
