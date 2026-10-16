@@ -1,0 +1,22 @@
+---
+description: Na Azure, enviar só o que o site precisa para build e para servir
+alwaysApply: true
+---
+
+# Upload para a VM Azure
+
+O único comando de envio é o `rsync` documentado no README, com `--exclude-from=azure-upload.exclude`. Não usar `rsync` da pasta inteira só com `--exclude '.git'`, nem `scp -r` do repositório.
+
+Sobe o que o Docker usa para buildar e servir, mais `deploy.sh` e `metrics.sh`, que rodam na VM:
+
+- `docker-compose.yml`
+- `proxy/`, `meu-portfolio/`, `clientes/`
+- `deploy.sh`, `metrics.sh`
+
+Não sobe documentação, git, configuração do editor nem o contador local. `deploys.txt` e `deploys.log` nascem na VM quando `deploy.sh` roda lá. Enviar a cópia do notebook substitui o contador oficial do servidor.
+
+```bash
+rsync -avz --exclude-from=azure-upload.exclude \
+  /Users/favelafood/Documents/portfolio-ugb/ \
+  azureuser@64.236.192.17:~/portfolio-ugb/
+```

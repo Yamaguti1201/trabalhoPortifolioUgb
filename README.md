@@ -90,10 +90,12 @@ az network nsg rule create \
 
 ### 3. Sincronizar Arquivos com a VM via `rsync`
 ```bash
-rsync -avz --exclude '.git' --exclude '.DS_Store' \
+rsync -avz --exclude-from=azure-upload.exclude \
   /Users/favelafood/Documents/portfolio-ugb/ \
   azureuser@64.236.192.17:~/portfolio-ugb/
 ```
+
+A lista `azure-upload.exclude` manda só o que o site precisa para buildar e servir (`docker-compose.yml`, `proxy/`, `meu-portfolio/`, `clientes/`, `deploy.sh`, `metrics.sh`). Ficam de fora git, documentação, `.cursor` e o contador local `deploys.txt` / `deploys.log`, que o `deploy.sh` cria na própria VM.
 
 ### 4. Executar o Deploy na VM
 Conecte via SSH:
