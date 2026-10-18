@@ -26,7 +26,7 @@ Para garantir a disponibilidade contínua dos portfólios hospedados na VM Azure
 | ID | Data / Hora | Componente Afetado | Gravidade | Descrição do Incidente | Causa Raiz | Ação Corretiva Adotada | Tempo de Downtime | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **INC-001** | 2026-09-20 18:30 | Gateway Nginx / NSG | Média | Porta 80 inacessível externamente no primeiro teste na Azure | Porta 80 não estava liberada no NSG `vm-flask-appNSG` (apenas 5000 liberada). | Criação da regra de entrada `Allow-HTTP-80` com prioridade 1010 no Azure NSG. | 0 min (ambiente pré-deploy) | **Resolvido** |
-| **INC-002** | - | - | - | Nenhum incidente em produção registrado até o momento. | - | Monitoramento ativo via `metrics.sh`. | 0 min | **Estável** |
+| **INC-002** | 2026-10-18 16:15 | Proxy Reverso Nginx | Baixa | Acesso ao subdomínio da Sara Marcelle (`sara_marcelle.ugbio.com.br`) exibia o portfólio principal. | O DNS foi configurado com underline (`sara_marcelle.ugbio.com.br`), enquanto o `proxy/nginx.conf` continha apenas regras com hífen (`sara-marcelle.*`). A requisição caía no bloco `default_server`. | Atualização do `proxy/nginx.conf` para aceitar hífen e underline (`sara-marcelle.* sara_marcelle.* ~^sara[-_]marcelle\.;`) em todos os clientes e deploy na VM Azure. | 0 min | **Resolvido** |
 
 ---
 

@@ -90,7 +90,8 @@ check_subdomain() {
 
 check_subdomain "joao-yamaguti.localhost" "João Pedro Yamaguti"
 check_subdomain "leticia-martins.localhost" "Letícia Martins"
-check_subdomain "sara-marcelle.localhost" "Sara Marcelle"
+check_subdomain "sara-marcelle.localhost" "Sara Marcelle (Hífen)"
+check_subdomain "sara_marcelle.localhost" "Sara Marcelle (Underline)"
 
 echo -e "\n${GREEN}====================================================${NC}"
 echo -e "${GREEN}  DEPLOY #${NEW_DEPLOY} CONCLUÍDO COM SUCESSO!            ${NC}"

@@ -83,7 +83,8 @@ test_subdomain_latency() {
 
 test_subdomain_latency "joao-yamaguti.localhost" "Yamaguti"
 test_subdomain_latency "leticia-martins.localhost" "Letícia Martins"
-test_subdomain_latency "sara-marcelle.localhost" "Sara Marcelle"
+test_subdomain_latency "sara-marcelle.localhost" "Sara Marcelle (Hífen)"
+test_subdomain_latency "sara_marcelle.localhost" "Sara Marcelle (Underline)"
 
 echo -e "\n${CYAN}======================================================${NC}"
 echo -e "${CYAN}      FIM DO RELATÓRIO DE MÉTRICAS                    ${NC}"

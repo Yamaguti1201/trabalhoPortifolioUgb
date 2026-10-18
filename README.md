@@ -30,13 +30,13 @@ Ecossistema multi-container para hospedagem de portfólios institucionais de alu
 
 ## 🌐 Roteamento e Acesso aos Portfólios
 
-O gateway Nginx suporta tanto o acesso por **subcaminho** quanto por **subdomínio com nome e sobrenome** (usando resolução automática [nip.io](https://nip.io) no IP da VM Azure `64.236.192.17`):
+O gateway Nginx suporta tanto o acesso por **subcaminho** quanto por **subdomínio com nome e sobrenome** (suportando hífen `-` e underline `_`, via [nip.io](https://nip.io) no IP da VM Azure `64.236.192.17` e via domínios `ugbio.com.br`):
 
-| Portfólio | Perfil UGB | Acesso por Subcaminho | Acesso por Subdomínio (Nome e Sobrenome) |
-| :--- | :--- | :--- | :--- |
-| **João Pedro Yamaguti** | Aluno Principal | `http://64.236.192.17/` | `http://joao-yamaguti.64.236.192.17.nip.io` |
-| **Letícia Fernandes Martins** | Aluna - Arquitetura & Urbanismo (Cliente 1) | `http://64.236.192.17/cliente-1/` | `http://leticia-martins.64.236.192.17.nip.io` |
-| **Sara Marcelle Cerqueira Amorim** | Aluna - Pedagogia (Cliente 2) | `http://64.236.192.17/cliente-2/` | `http://sara-marcelle.64.236.192.17.nip.io` |
+| Portfólio | Perfil UGB | Acesso por Subcaminho | Acesso por Subdomínio (Nome e Sobrenome) | Domínio de Produção |
+| :--- | :--- | :--- | :--- | :--- |
+| **João Pedro Yamaguti** | Aluno Principal | `http://64.236.192.17/` | `http://joao-yamaguti.64.236.192.17.nip.io` | `http://64.236.192.17` |
+| **Letícia Fernandes Martins** | Aluna - Arquitetura & Urbanismo (Cliente 1) | `http://64.236.192.17/cliente-1/` | `http://leticia-martins.64.236.192.17.nip.io` | `http://leticia-martins.ugbio.com.br` |
+| **Sara Marcelle Cerqueira Amorim** | Aluna - Pedagogia (Cliente 2) | `http://64.236.192.17/cliente-2/` | `http://sara-marcelle.64.236.192.17.nip.io` | `http://sara_marcelle.ugbio.com.br` |
 
 ---
 
