@@ -31,6 +31,7 @@ echo -e "  • Total de Clientes Cadastrados: ${GREEN}${CLIENTS_COUNT}${NC} (1 A
 echo -e "  • Total de Deploys Executados:   ${GREEN}${TOTAL_DEPLOYS}${NC}"
 echo -e "  • Preço Cobrado:                 ${GREEN}R$ 5,00 / cliente${NC}"
 echo -e "  • Período de Garantia:           ${GREEN}Até 3 meses${NC}"
+echo -e "  • Protocolo de Segurança:        ${GREEN}HTTPS / TLS 1.3 (Porta 443)${NC}"
 
 # 3. Métrica: Status e Isolamento dos Contêineres
 echo -e "\n${BLUE}--- [2] STATUS DOS CONTÊINERES DOCKER ---${NC}"
@@ -58,26 +59,26 @@ $COMPOSE_CMD ps --format "table {{.Name}}\t{{.Status}}\t{{.Ports}}"
 echo -e "\n${BLUE}--- [3] CONSUMO DE RECURSOS (CPU & MEMÓRIA) ---${NC}"
 $DOCKER_CMD stats --no-stream --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.NetIO}}"
 
-# 5. Métrica: Disponibilidade e Tempos de Resposta
-echo -e "\n${BLUE}--- [4] TESTE DE TEMPO DE RESPOSTA (LATÊNCIA) ---${NC}"
+# 5. Métrica: Disponibilidade e Tempos de Resposta (HTTPS)
+echo -e "\n${BLUE}--- [4] TESTE DE TEMPO DE RESPOSTA HTTPS (LATÊNCIA) ---${NC}"
 test_latency() {
     local url=$1
     local name=$2
     local time_total
-    time_total=$(curl -s -o /dev/null -w "%{time_total}s" "$url" || echo "Falha")
+    time_total=$(curl -k -s -o /dev/null -w "%{time_total}s" "$url" || echo "Falha")
     echo -e "  • ${name}: ${GREEN}${time_total}${NC}"
 }
 
-test_latency "http://localhost/" "Portfólio Aluno (/)"
-test_latency "http://localhost/yamaguti/" "Portfólio Aluno (/yamaguti/)"
-test_latency "http://localhost/cliente-1/" "Portfólio Aluna - Arquitetura e Urbanismo (Letícia Martins)"
-test_latency "http://localhost/cliente-2/" "Portfólio Aluna - Pedagogia (Sara Marcelle)"
+test_latency "https://localhost/" "Portfólio Aluno (Yamaguti) [/]"
+test_latency "https://localhost/yamaguti/" "Portfólio Aluno (/yamaguti/)"
+test_latency "https://localhost/cliente-1/" "Portfólio Aluna - Arquitetura (Letícia Martins)"
+test_latency "https://localhost/cliente-2/" "Portfólio Aluna - Pedagogia (Sara Marcelle)"
 
 test_subdomain_latency() {
     local host=$1
     local name=$2
     local time_total
-    time_total=$(curl -s -o /dev/null -w "%{time_total}s" -H "Host: $host" "http://localhost/" || echo "Falha")
+    time_total=$(curl -k -s -o /dev/null -w "%{time_total}s" -H "Host: $host" "https://localhost/" || echo "Falha")
     echo -e "  • Subdomínio ${name} (${host}): ${GREEN}${time_total}${NC}"
 }
 

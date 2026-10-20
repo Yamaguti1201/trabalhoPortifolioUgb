@@ -27,6 +27,7 @@ Para garantir a disponibilidade contínua dos portfólios hospedados na VM Azure
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **INC-001** | 2026-09-20 18:30 | Gateway Nginx / NSG | Média | Porta 80 inacessível externamente no primeiro teste na Azure | Porta 80 não estava liberada no NSG `vm-flask-appNSG` (apenas 5000 liberada). | Criação da regra de entrada `Allow-HTTP-80` com prioridade 1010 no Azure NSG. | 0 min (ambiente pré-deploy) | **Resolvido** |
 | **INC-002** | 2026-10-18 16:15 | Proxy Reverso Nginx | Baixa | Acesso ao subdomínio da Sara Marcelle (`sara_marcelle.ugbio.com.br`) exibia o portfólio principal. | O DNS foi configurado com underline (`sara_marcelle.ugbio.com.br`), enquanto o `proxy/nginx.conf` continha apenas regras com hífen (`sara-marcelle.*`). A requisição caía no bloco `default_server`. | Atualização do `proxy/nginx.conf` para aceitar hífen e underline (`sara-marcelle.* sara_marcelle.* ~^sara[-_]marcelle\.;`) em todos os clientes e deploy na VM Azure. | 0 min | **Resolvido** |
+| **INC-003** | 2026-10-20 16:25 | Firewall Azure NSG & Proxy Nginx | Média | Acesso via navegadores modernos bloqueando HTTP ou gerando alertas de insegurança nos celulares | Navegadores móveis e desktop exigem HTTPS/TLS por padrão e a porta 443 estava bloqueada no NSG da VM. | Criação da regra `Allow-HTTPS-443` (prioridade 1040) no Azure NSG, mapeamento da porta 443 no gateway Nginx com TLS 1.3 e automação de certificados com Certbot. | 0 min | **Resolvido** |
 
 ---
 

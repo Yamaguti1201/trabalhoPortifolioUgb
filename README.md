@@ -9,7 +9,7 @@ Ecossistema multi-container para hospedagem de portfólios institucionais de alu
 ```text
                                 [ Usuário / Avaliador ]
                                            │
-                                    Porta 80 (HTTP)
+                                    Porta 80 (HTTP -> 301) e Porta 443 (HTTPS)
                                            ▼
                            ┌───────────────────────────────┐
                            │   ugb-proxy (Nginx Gateway)   │
@@ -32,11 +32,11 @@ Ecossistema multi-container para hospedagem de portfólios institucionais de alu
 
 O gateway Nginx suporta tanto o acesso por **subcaminho** quanto por **subdomínio com nome e sobrenome** (suportando hífen `-` e underline `_`, via [nip.io](https://nip.io) no IP da VM Azure `64.236.192.17` e via domínios `ugbio.com.br`):
 
-| Portfólio | Perfil UGB | Acesso por Subcaminho | Acesso por Subdomínio (Nome e Sobrenome) | Domínio de Produção |
+| Portfólio | Perfil UGB | Acesso por Subcaminho | Acesso por Subdomínio (Nome e Sobrenome) | Domínio de Produção (HTTPS) |
 | :--- | :--- | :--- | :--- | :--- |
-| **João Pedro Yamaguti** | Aluno Principal | `http://64.236.192.17/` | `http://joao-yamaguti.64.236.192.17.nip.io` | `http://64.236.192.17` |
-| **Letícia Fernandes Martins** | Aluna - Arquitetura & Urbanismo (Cliente 1) | `http://64.236.192.17/cliente-1/` | `http://leticia-martins.64.236.192.17.nip.io` | `http://leticia-martins.ugbio.com.br` |
-| **Sara Marcelle Cerqueira Amorim** | Aluna - Pedagogia (Cliente 2) | `http://64.236.192.17/cliente-2/` | `http://sara-marcelle.64.236.192.17.nip.io` | `http://sara_marcelle.ugbio.com.br` |
+| **João Pedro Yamaguti** | Aluno Principal | `https://64.236.192.17/` | `http://joao-yamaguti.64.236.192.17.nip.io` | `https://ugbio.com.br` |
+| **Letícia Fernandes Martins** | Aluna - Arquitetura & Urbanismo (Cliente 1) | `https://64.236.192.17/cliente-1/` | `http://leticia-martins.64.236.192.17.nip.io` | `https://leticia-martins.ugbio.com.br` |
+| **Sara Marcelle Cerqueira Amorim** | Aluna - Pedagogia (Cliente 2) | `https://64.236.192.17/cliente-2/` | `http://sara-marcelle.64.236.192.17.nip.io` | `https://sara-marcelle.ugbio.com.br` |
 
 ---
 
@@ -76,14 +76,25 @@ Conforme a regra do professor (*"Todo incidente precisa ser relatado"*), consult
 - **Resource Group:** `rg-aula-devops`
 - **VM Name:** `vm-flask-app`
 
-### 2. Liberar Porta 80 no Azure NSG
+### 2. Liberar Portas 80 (HTTP) e 443 (HTTPS) no Azure NSG
 ```bash
+# Porta 80 (HTTP)
 az network nsg rule create \
   --resource-group rg-aula-devops \
   --nsg-name vm-flask-appNSG \
   --name Allow-HTTP-80 \
   --priority 1010 \
   --destination-port-ranges 80 \
+  --protocol Tcp \
+  --access Allow
+
+# Porta 443 (HTTPS)
+az network nsg rule create \
+  --resource-group rg-aula-devops \
+  --nsg-name vm-flask-appNSG \
+  --name Allow-HTTPS-443 \
+  --priority 1040 \
+  --destination-port-ranges 443 \
   --protocol Tcp \
   --access Allow
 ```
