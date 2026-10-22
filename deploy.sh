@@ -61,7 +61,7 @@ check_url() {
     local url=$1
     local name=$2
     local status
-    status=$(curl -s -o /dev/null -w "%{http_code}" "$url" || echo "FALHA")
+    status=$(curl -k -s -o /dev/null -w "%{http_code}" "$url" || echo "FALHA")
 
     if [ "$status" = "200" ] || [ "$status" = "301" ]; then
         echo -e "  [✔] ${name}: ${GREEN}ONLINE (HTTP $status)${NC}"
@@ -70,16 +70,23 @@ check_url() {
     fi
 }
 
-check_url "http://localhost/" "Portfólio Aluno (Yamaguti)"
-check_url "http://localhost/yamaguti/" "Portfólio Aluno (Yamaguti)"
-check_url "http://localhost/cliente-1/" "Portfólio Aluna - Arquitetura e Urbanismo (Letícia Martins)"
-check_url "http://localhost/cliente-2/" "Portfólio Aluna - Pedagogia (Sara Marcelle)"
+# Verificação interna do endpoint /health do proxy
+check_url "http://127.0.0.1/health" "Proxy Gateway Health Endpoint"
+
+# Verificação das rotas por subcaminho em HTTPS
+check_url "https://localhost/" "Portfólio Aluno (Yamaguti) [HTTPS]"
+check_url "https://localhost/yamaguti/" "Portfólio Aluno (Yamaguti) [HTTPS]"
+check_url "https://localhost/cliente-1/" "Portfólio Aluna - Arquitetura (Letícia Martins) [HTTPS]"
+check_url "https://localhost/cliente-2/" "Portfólio Aluna - Pedagogia (Sara Marcelle) [HTTPS]"
+
+# Verificação do redirecionamento HTTP -> HTTPS
+check_url "http://localhost/" "Redirecionamento HTTP -> HTTPS (Porta 80)"
 
 check_subdomain() {
     local host=$1
     local name=$2
     local status
-    status=$(curl -s -o /dev/null -w "%{http_code}" -H "Host: $host" "http://localhost/" || echo "FALHA")
+    status=$(curl -k -s -o /dev/null -w "%{http_code}" -H "Host: $host" "https://localhost/" || echo "FALHA")
 
     if [ "$status" = "200" ]; then
         echo -e "  [✔] Subdomínio ${name} (${host}): ${GREEN}ONLINE (HTTP $status)${NC}"
