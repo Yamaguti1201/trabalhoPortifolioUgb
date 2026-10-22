@@ -23,12 +23,13 @@
   }
   </script>
 
+  <meta name="theme-color" content="#5c1333" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=wine1" />
 </head>
 
 <body>
@@ -108,12 +109,8 @@
             </div>
 
             <div class="d-flex gap-2 justify-content-center justify-content-md-start align-items-center">
-              <a href="https://wa.me/5524988085440" target="_blank" rel="noopener" class="btn-social-icon" title="WhatsApp: (24) 98808-5440" aria-label="WhatsApp: (24) 98808-5440">
-                <i class="fa-brands fa-whatsapp"></i>
-              </a>
-              <a href="mailto:profsaramarcelle@gmail.com" class="btn-social-icon" title="profsaramarcelle@gmail.com" aria-label="profsaramarcelle@gmail.com">
-                <i class="fa-solid fa-envelope"></i>
-              </a>
+              <a href="https://wa.me/5524988085440" target="_blank" rel="noopener" class="btn-social-icon text-decoration-none" style="text-decoration: none !important;" title="WhatsApp: (24) 98808-5440" aria-label="WhatsApp: (24) 98808-5440"><i class="fa-brands fa-whatsapp" style="text-decoration: none !important;"></i></a>
+              <a href="mailto:profsaramarcelle@gmail.com" class="btn-social-icon text-decoration-none" style="text-decoration: none !important;" title="profsaramarcelle@gmail.com" aria-label="profsaramarcelle@gmail.com"><i class="fa-solid fa-envelope" style="text-decoration: none !important;"></i></a>
               <span class="d-inline-flex align-items-center text-muted small ms-2">
                 <i class="fa-solid fa-location-dot me-1 text-info"></i> Volta Redonda, RJ
               </span>
@@ -506,7 +503,7 @@
   <!-- Modal de Currículo (shadcn/ui Dialog style) -->
   <div class="modal fade" id="modalCurriculoSara" tabindex="-1" aria-labelledby="modalCurriculoSaraLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content border-0 shadow-lg" style="background: #1e1b4b; border-radius: 16px; overflow: hidden;">
+      <div class="modal-content border-0 shadow-lg" style="background: #2a0817; border-radius: 16px; overflow: hidden;">
         <div class="modal-header border-bottom border-secondary border-opacity-25 py-3 px-4">
           <h5 class="modal-title text-white fs-6 fw-semibold" id="modalCurriculoSaraLabel">
             <i class="fa-solid fa-file-image text-info me-2"></i>Currículo — Sara Marcelle Cerqueira Amorim
@@ -518,7 +515,7 @@
             <button type="button" class="btn-close btn-close-white ms-2" data-bs-dismiss="modal" aria-label="Fechar"></button>
           </div>
         </div>
-        <div class="modal-body p-3 text-center" style="background: #0f172a;">
+        <div class="modal-body p-3 text-center" style="background: #1a040d;">
           <img src="arquivosSaraMarcelePortifolio/curriculoSaraMarcelle.jpeg" alt="Currículo de Sara Marcelle Cerqueira Amorim" loading="lazy" decoding="async" style="max-height: 78vh; max-width: 100%; width: auto; border-radius: 8px;" />
         </div>
       </div>
@@ -528,12 +525,12 @@
   <!-- Modal Lightbox (shadcn/ui Dialog style) para ampliar cronogramas -->
   <div class="modal fade" id="lightboxModal" tabindex="-1" aria-labelledby="lightboxModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered">
-      <div class="modal-content border-0 shadow-lg" style="background: #1e1b4b; border-radius: 16px; overflow: hidden;">
+      <div class="modal-content border-0 shadow-lg" style="background: #2a0817; border-radius: 16px; overflow: hidden;">
         <div class="modal-header border-bottom border-secondary border-opacity-25 py-3 px-4">
           <h5 class="modal-title text-white fs-6 fw-semibold" id="lightboxModalLabel">Visualização</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
         </div>
-        <div class="modal-body p-0 text-center" style="background: #040d1a;">
+        <div class="modal-body p-0 text-center" style="background: #1a040d;">
           <img id="lightboxModalImg" src="" alt="" style="max-height: 80vh; max-width: 100%; width: auto; object-fit: contain;" />
         </div>
       </div>
