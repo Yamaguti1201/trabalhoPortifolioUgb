@@ -70,11 +70,11 @@ $COMPOSE_CMD run --rm --entrypoint certbot certbot certonly \
     --non-interactive \
     --expand
 
-# Garante que o caminho /etc/letsencrypt/live/ugbio.com.br esperado pelo Nginx esteja acessível
+# Garante que o caminho /etc/letsencrypt/live/ugbio.com.br esperado pelo Nginx aponte para a versão mais recente
 $COMPOSE_CMD exec proxy sh -c '
-if [ ! -f /etc/letsencrypt/live/ugbio.com.br/fullchain.pem ] && [ -f /etc/letsencrypt/live/ugbio.com.br-0001/fullchain.pem ]; then
-    rm -rf /etc/letsencrypt/live/ugbio.com.br
-    ln -s /etc/letsencrypt/live/ugbio.com.br-0001 /etc/letsencrypt/live/ugbio.com.br
+LATEST=$(ls -d /etc/letsencrypt/live/ugbio.com.br* 2>/dev/null | grep -E "ugbio\.com\.br(-[0-9]+)?$" | sort -V | tail -n1)
+if [ -n "$LATEST" ] && [ "$LATEST" != "/etc/letsencrypt/live/ugbio.com.br" ]; then
+    ln -sfn "$LATEST" /etc/letsencrypt/live/ugbio.com.br
 fi
 '
 
